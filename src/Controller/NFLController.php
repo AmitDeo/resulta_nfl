@@ -15,10 +15,12 @@ use Drupal\Component\Serialization\Json;
 class NFLController extends ControllerBase {
 	private $apiurl;
 	private $apikey;
-  	
+  	private $nflteams;
+
 	function __construct() {
 		$this->apiurl = 'http://delivery.chalk247.com/';
 	    $this->apikey = '74db8efa2a6db279393b433d97c2bc843f8e32b0';
+	    $this->teams = [];
 	}
 
 	public function getTeamList()
@@ -48,9 +50,58 @@ class NFLController extends ControllerBase {
 	      $teams[] = $team;
 	    }
 
+	    $this->nflteams = $teams;
+
 	    return $teams;
 	}
 
+	/**
+	* Public function to get unique conferences for the filter
+	*/
+	public function getConferences()
+	{
+		$conferences = [];
 
+		if(count($this->nflteams))
+		{
+			foreach($this->nflteams as $team)
+			{
+				if(!in_array($team['conference'], $conferences))
+				{
+					$conferences[] = $team['conference'];
+				}
+			}
+
+			//Sort alphabetically
+			sort($conferences);	
+		}
+
+		return $conferences;
+	}
+
+	/**
+	* Public function to get unique Divisins for the filter
+	*/
+	public function getDivisions()
+	{
+		$divisions = [];
+
+		if(count($this->nflteams))
+		{
+			foreach($this->nflteams as $team)
+			{
+				if(!in_array($team['division'], $divisions))
+				{
+					$divisions[] = $team['division'];
+				}
+			}
+
+			//Sort alphabetically
+			sort($divisions);
+
+		}
+
+		return $divisions;
+	}
 
 }

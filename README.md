@@ -3,6 +3,7 @@
 ## Requirements
 
 Drupal 8
+PHP 7.x
 
 ## How to install? 
 1. Place Module inside modules/custom/ folder.

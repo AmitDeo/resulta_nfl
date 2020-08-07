@@ -43,11 +43,17 @@ class NFLBlock extends BlockBase {
 	private function _buildTeam()
 	{
 		$nflObj = new NFLController();
+		//Get Team List
 		$teams = $nflObj->getTeamList();
+		//Get Unique conferences and divisions for filter
+		$conferences = $nflObj->getConferences();
+		$divisions = $nflObj->getDivisions();
 
 		$renderable = [
             '#theme' => 'teamlist-template',
-            '#teams' => $teams
+            '#teams' => $teams,
+            '#conferences' => $conferences,
+            '#divisions' => $divisions
         ];
 
        	return \Drupal::service('renderer')->render($renderable);

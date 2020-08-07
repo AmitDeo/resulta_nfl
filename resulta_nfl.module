@@ -9,7 +9,7 @@ function resulta_nfl_theme($existing, $type, $theme, $path) {
 	
 	return [
 	    'teamlist-template' => [
-	      'variables' => ['teams' => []],
+	      'variables' => ['teams' => [], 'conferences' => [], 'divisions' => []],
 	    ]
 	  ];
 }
