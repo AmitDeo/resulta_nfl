@@ -1,0 +1,74 @@
+<div class="nflTeamList">
+<h2>NFL Teams</h2>
+
+<div class="teamList">
+	{% if teams is not empty %}
+	<div class="filterBy">
+		<div class="filterByTitle">Filter By: </div>
+		<div class="filterByConference">
+			<select id="filterKeyConference">
+				<option value="">--Conference--</option>
+				<option value="National Football Conference">National Football Conference</option>
+				<option value="American Football Conference">American Football Conference</option>
+			</select>
+		</div>
+		<div class="filterByDivision">
+			<select id="filterKeyDivision">
+				<option value="">--Division--</option>
+				<option value="East">East</option>
+				<option value="West">West</option>
+				<option value="North">North</option>
+				<option value="South">South</option>
+			</select>
+		</div>
+	</div>
+
+	<table id="tblTeamList">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Nickname</th>
+				<th>Display Name</th>
+				<th>Conference</th>
+				<th>Division</th>
+			</tr>
+		</thead>
+		<tfoot>
+		    <tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Nickname</th>
+				<th>Display Name</th>
+				<th>Conference</th>
+				<th>Division</th>
+			</tr>
+		    <tr>
+		      <td colspan="6">
+		        <div class="tblPager">
+		          <nav class="right">
+		            <span class="prev">
+		 				Prev&nbsp;
+		            </span>
+		            <span class="pagecount"></span>
+		            &nbsp;<span class="next">Next</span>
+		          </nav>
+		        </div>
+		      </td>
+		    </tr>
+		  </tfoot>
+		{% for team in teams %}
+			<tr>
+				<td>{{ team.id }}</td>
+				<td>{{ team.name }}</td>
+				<td>{{ team.nickname }}</td>
+				<td>{{ team.display_name }}</td>
+				<td>{{ team.conference }}</td>
+				<td>{{ team.division }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+	{% else %}
+		<h4>Sorry! No team exists now. Check back later!</h4>
+	{% endif %}
+</div>

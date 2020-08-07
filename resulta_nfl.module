@@ -1,0 +1,15 @@
+<?php
+
+/**
+* Implementing hook_theme() to setup template for the block
+* 
+*/
+
+function resulta_nfl_theme($existing, $type, $theme, $path) {
+	
+	return [
+	    'teamlist-template' => [
+	      'variables' => ['teams' => []],
+	    ]
+	  ];
+}

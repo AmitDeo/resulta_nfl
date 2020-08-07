@@ -1,0 +1,29 @@
+
+.tblPager,
+.tblPager a,
+.tblPager span
+{
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.tblPager a.current
+{
+	font-weight: bold;
+	font-weight: 14px;
+}
+
+.filterBy
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.filterBy > div
+{
+	margin-right: 10px;
+}
+

@@ -1,0 +1,15 @@
+team-list:
+  version: 1.0
+  header: false
+  css:
+    theme:
+      assets/css/jquery.tablesorter.pager.min.css: {}
+      assets/css/theme.blue.min.css: {}
+      assets/css/team_list.css: {}
+  js:
+    assets/js/jquery.tablesorter.combined.min.js: {minified: true}
+    assets/js/jquery.tablesorter.pager.min.js: {minified: false}
+    assets/js/pager-custom-controls.js: {minified: false}
+    assets/js/team_list.js: {}
+  dependencies:
+    - core/jquery

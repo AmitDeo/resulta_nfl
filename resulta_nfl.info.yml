@@ -1,0 +1,10 @@
+name: NFL Manager
+description: A simple module to list the NFL teams.
+package: Custom
+type: module
+version: 1.0
+core: 8.x
+
+dependencies:
+  - block
+php: 7.x
